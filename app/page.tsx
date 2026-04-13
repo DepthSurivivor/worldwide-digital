@@ -898,13 +898,12 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="relative h-10 w-10 rounded-xl overflow-hidden ring-1 ring-primary/20">
-                  <Image
-                    src="/images/wds-logo.jpg"
-                    alt="Worldwide Digital Service Logo"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative h-10 w-10 rounded-xl bg-gradient-to-br from-primary via-primary to-primary/70 ring-1 ring-primary/20 flex items-center justify-center shadow-lg shadow-primary/25">
+                  <div className="absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.22),_transparent_55%)]" />
+                  <Globe className="h-6 w-6 text-primary-foreground/90" />
+                  <div className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full bg-background border border-primary/25 flex items-center justify-center shadow-sm">
+                    <Headphones className="h-2.5 w-2.5 lg:h-3 lg:w-3 text-primary" />
+                  </div>
                 </div>
                 <div>
                   <span className="text-xl font-bold">
@@ -924,19 +923,6 @@ export default function HomePage() {
                 businesses. Connecting brands with customers across 50+
                 languages worldwide.
               </p>
-              <div className="flex gap-3">
-                {["LinkedIn", "Twitter", "Facebook"].map((social) => (
-                  <Button
-                    key={social}
-                    variant="outline"
-                    size="icon"
-                    className="rounded-full border-border hover:border-primary/50 hover:bg-primary/10"
-                  >
-                    <span className="sr-only">{social}</span>
-                    <Globe className="h-4 w-4" />
-                  </Button>
-                ))}
-              </div>
             </div>
 
             {[
