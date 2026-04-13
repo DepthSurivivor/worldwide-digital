@@ -351,18 +351,16 @@ export default function HomePage() {
             </a>
 
             <nav className="hidden lg:flex items-center gap-8">
-              {["Solutions", "Global Reach", "Testimonials"].map(
-                (item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase().replace(" ", "-")}`}
-                    className="text-muted-foreground hover:text-foreground transition-colors relative group"
-                  >
-                    {item}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                  </a>
-                ),
-              )}
+              {["Solutions", "Global Reach", "Testimonials"].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase().replace(" ", "-")}`}
+                  className="text-muted-foreground hover:text-foreground transition-colors relative group"
+                >
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </a>
+              ))}
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -387,18 +385,16 @@ export default function HomePage() {
           className={`lg:hidden border-t border-border bg-background/95 backdrop-blur-xl transition-all duration-300 ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}
         >
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
-            {["Solutions", "Global Reach", "Testimonials"].map(
-              (item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
-                  className="text-muted-foreground hover:text-foreground transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
-                </a>
-              ),
-            )}
+            {["Solutions", "Global Reach", "Testimonials"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase().replace(" ", "-")}`}
+                className="text-muted-foreground hover:text-foreground transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
               Get Started <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -1078,7 +1074,7 @@ export default function HomePage() {
       </div>
 
       {/* Chat Button */}
-      <button
+      {/* <button
         onClick={() => setIsChatOpen(!isChatOpen)}
         className="fixed bottom-4 lg:bottom-8 right-4 lg:right-8 h-14 w-14 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 flex items-center justify-center z-40 hover:scale-110"
       >
@@ -1092,7 +1088,7 @@ export default function HomePage() {
             </>
           )}
         </div>
-      </button>
+      </button> */}
     </div>
   );
 }
