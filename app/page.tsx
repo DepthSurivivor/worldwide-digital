@@ -478,6 +478,9 @@ export default function HomePage() {
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 WDS is built for operators who need reliable call coverage now. We find the failure points, close the gaps quickly, and keep every handoff clear for your internal team.
               </p>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                Built around real call flows, intake processes, and missed-call recovery scenarios.
+              </p>
               <ul className="space-y-4">
                 {whyWds.map((item) => (
                   <li key={item} className="flex items-start gap-3">
@@ -552,6 +555,46 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="py-20 lg:py-28 bg-card/30">
+        <div className="container mx-auto px-4 lg:px-8">
+          <AnimatedSection className="text-center mb-14">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/30">Products / Live Systems</Badge>
+            <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-balance">Live Systems & Deployments</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+              Examples of systems we&apos;ve built to handle real-world intake, missed calls, and client response workflows.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection className="max-w-3xl mx-auto">
+            <Card className="p-6 lg:p-8 border-border bg-card/60 hover:border-primary/50 transition-all duration-300">
+              <h3 className="text-2xl font-bold mb-3">CaseCapture</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Family law intake coverage system designed to capture, qualify, and route potential clients before they&apos;re lost.
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Intake capture for inbound inquiries
+                </li>
+                <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Qualification before attorney handoff
+                </li>
+                <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Structured next-step routing
+                </li>
+              </ul>
+              <Button asChild variant="outline" className="border-border hover:bg-secondary hover:border-primary/30 transition-all duration-300">
+                <a href="https://familylaw.worldwidedigitalservice.info" target="_blank" rel="noreferrer">
+                  View Demo
+                </a>
+              </Button>
+            </Card>
+          </AnimatedSection>
+        </div>
+      </section>
+
       <section id="book" className="py-20 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-primary/5" />
         <div className="container mx-auto px-4 lg:px-8 relative">
@@ -564,7 +607,7 @@ export default function HomePage() {
               Let&apos;s Build Your Response Coverage
             </h2>
             <p className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed text-center">
-              Share where missed calls, intake bottlenecks, overflow demand, after-hours response, or bilingual support gaps are showing up.
+              We&apos;ll identify exactly where calls are being missed, intake is breaking down, and where coverage needs to be added first.
             </p>
 
             {state.succeeded ? (
