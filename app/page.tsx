@@ -129,14 +129,6 @@ export default function HomePage() {
       image: "/images/blog-analytics.jpg",
     },
     {
-      icon: MessageSquare,
-      title: "Lead & Inquiry Qualification",
-      description:
-        "First-pass screening against your criteria so your team spends time on viable jobs and real opportunities.",
-      points: ["Basic fit screening", "Priority tagging", "Ready-to-work leads"],
-      image: "/images/solutions-ai.jpg",
-    },
-    {
       icon: Headphones,
       title: "Overflow Call Handling",
       description:
@@ -205,11 +197,11 @@ export default function HomePage() {
   ];
 
   const useCases = [
-    "Law firm intake overflow when consultation requests spike and internal staff is already in casework",
-    "Missed calls during peak service windows when dispatch, scheduling, and field updates hit at once",
-    "After-hours inquiries that need a live answer, urgency triage, and a clear next business-day handoff",
-    "Bilingual inbound response when Spanish-speaking callers need help without waiting for a callback",
-    "Appointment follow-up gaps where reminders and rebooking tasks fall behind during busy weeks",
+    "Law firm intake overflow when consultation demand spikes and case staff is tied up",
+    "Missed calls in peak service windows when dispatch, scheduling, and field updates hit together",
+    "After-hours inquiries that need a live answer, quick urgency triage, and clean next-day handoff",
+    "Bilingual inbound coverage when Spanish-speaking callers need support without callback delays",
+    "Appointment follow-up gaps when reminders and rebooking fall behind during heavy weeks",
   ];
 
   return (
@@ -402,7 +394,7 @@ export default function HomePage() {
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {whoWeHelp.map((group, index) => (
               <AnimatedSection key={group.title} delay={index * 80}>
                 <Card className="h-full p-6 border-border bg-card/60 hover:border-primary/50 transition-all duration-300">
@@ -427,7 +419,7 @@ export default function HomePage() {
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, index) => (
               <AnimatedSection key={service.title} delay={index * 100}>
                 <Card className="group h-full overflow-hidden border-border hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] bg-card/50 hover:bg-card">
