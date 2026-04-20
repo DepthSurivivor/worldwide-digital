@@ -82,32 +82,32 @@ export default function HomePage() {
     {
       title: "Law Firms",
       description:
-        "Intake support for consultations, case screening, and missed-call follow-up.",
+        "Front-desk and legal intake backup for consultations, case screening, and urgent callbacks.",
     },
     {
       title: "Home Service Companies",
       description:
-        "Coverage for calls, estimates, and scheduling when your field teams are busy.",
+        "Call and scheduling coverage while crews are in the field and your office line keeps ringing.",
     },
     {
       title: "Contractors",
       description:
-        "Reliable call capture and lead qualification so work orders do not slip away.",
+        "Missed-call capture and inquiry qualification so estimate requests do not sit untouched.",
     },
     {
       title: "Appointment-Based Businesses",
       description:
-        "Consistent customer response for bookings, confirmations, and inbound questions.",
+        "Reliable booking support, confirmations, and reschedules to keep calendars full and organized.",
     },
     {
-      title: "Support Teams with Overflow",
+      title: "Overflow Support Teams",
       description:
-        "Extra frontline coverage during peak demand, staffing gaps, and after-hours windows.",
+        "Extra phone coverage during peak hours, staffing gaps, and high-volume periods.",
     },
     {
       title: "Bilingual Customer Bases",
       description:
-        "English-Spanish customer support that improves clarity and trust on first contact.",
+        "English-Spanish frontline support so customers can explain needs clearly on the first call.",
     },
   ];
 
@@ -116,57 +116,65 @@ export default function HomePage() {
       icon: Phone,
       title: "Missed Call Capture",
       description:
-        "Capture inbound calls and route every lead or customer inquiry into a clear next step.",
-      points: ["Fast call answer", "Lead logged", "No silent drop-off"],
+        "Answer inbound calls quickly so new leads and current customers do not get sent to voicemail.",
+      points: ["More calls answered", "Fewer lost leads", "Clear next-step notes"],
       image: "/images/support-team.jpg",
     },
     {
       icon: UserCheck,
-      title: "Intake & Lead Qualification",
+      title: "Intake Support",
       description:
-        "Collect the right details up front so your team can prioritize and follow up with confidence.",
-      points: ["Scripted intake", "Qualified handoff", "Clean notes"],
+        "Gather complete caller details and service needs so your internal team gets cleaner handoffs.",
+      points: ["Structured intake", "Complete caller details", "Cleaner internal handoff"],
       image: "/images/blog-analytics.jpg",
     },
     {
       icon: MessageSquare,
-      title: "Bilingual Customer Support",
+      title: "Lead & Inquiry Qualification",
       description:
-        "Provide professional English-Spanish support for inbound customer questions and service updates.",
-      points: ["Bilingual agents", "Consistent responses", "Customer-ready tone"],
+        "Screen new inquiries against your criteria so your team spends time on qualified opportunities.",
+      points: ["Basic fit screening", "Priority tagging", "Ready-to-work leads"],
       image: "/images/solutions-ai.jpg",
     },
     {
       icon: Headphones,
       title: "Overflow Call Handling",
       description:
-        "Extend coverage during high volume periods so your internal team can stay focused on core work.",
-      points: ["Peak-time support", "Queue relief", "Escalation paths"],
+        "Keep response times steady during busy periods by routing excess call volume to WDS.",
+      points: ["Peak-hour relief", "Less front-desk pressure", "No dropped demand"],
       image: "/images/global-network.jpg",
     },
     {
       icon: Clock,
-      title: "After-Hours Response Coverage",
+      title: "After-Hours Response",
       description:
-        "Maintain dependable response when your office is closed and urgent inquiries still come in.",
-      points: ["Evening coverage", "Weekend support", "Urgency triage"],
+        "Provide evening and weekend call coverage so urgent inquiries are handled when your office is closed.",
+      points: ["Evening coverage", "Weekend support", "Urgency-based routing"],
       image: "/images/hero-globe.jpg",
     },
     {
       icon: ChevronRight,
       title: "Appointment Setting & Follow-Up",
       description:
-        "Confirm appointments and complete follow-up workflows so leads and customers keep moving forward.",
-      points: ["Scheduling support", "Reminder outreach", "Follow-up consistency"],
+        "Book appointments, send reminders, and follow up with open inquiries to reduce no-shows and delays.",
+      points: ["Appointment booking", "Reminder calls", "Follow-up completion"],
       image: "/images/blog-multilingual.jpg",
+    },
+    {
+      icon: MessageSquare,
+      title: "Bilingual Customer Support",
+      description:
+        "Support English- and Spanish-speaking callers with clear updates, answers, and next steps.",
+      points: ["English + Spanish", "Consistent customer response", "Better communication clarity"],
+      image: "/images/solutions-ai.jpg",
     },
   ];
 
   const whyWds = [
-    "Veteran-owned leadership with a disciplined execution mindset",
-    "Direct communication with clear ownership and practical decisions",
-    "Nearshore flexibility that scales with your volume and workflow",
-    "Bilingual support designed for real-world service operations",
+    "Veteran-owned team with disciplined execution and follow-through",
+    "Practical rollout that fits your current tools, scripts, and workflow",
+    "Direct communication with clear ownership and fast adjustments",
+    "Bilingual nearshore support that scales without heavy enterprise overhead",
   ];
 
   const processSteps = [
@@ -174,34 +182,34 @@ export default function HomePage() {
       step: "01",
       title: "Assess Response Gaps",
       description:
-        "We review your missed-call patterns, intake bottlenecks, and service response pressure points.",
+        "We review where calls are missed, where intake breaks down, and when response slows down.",
     },
     {
       step: "02",
       title: "Align to Your Workflow",
       description:
-        "We map scripts, escalation paths, and handoff standards to match how your team already works.",
+        "We set scripts, qualification criteria, and handoff rules around how your team already operates.",
     },
     {
       step: "03",
       title: "Deploy Support Coverage",
       description:
-        "We activate bilingual nearshore coverage for inbound support, overflow, and after-hours response.",
+        "We launch missed-call, overflow, after-hours, and bilingual support based on your coverage needs.",
     },
     {
       step: "04",
-      title: "Improve Consistency",
+      title: "Track & Improve",
       description:
-        "Your team receives cleaner intake, faster response cycles, and better day-to-day support continuity.",
+        "You get consistent intake, cleaner handoffs, and regular adjustments as demand changes.",
     },
   ];
 
   const useCases = [
-    "Legal Intake",
-    "Home Services",
-    "Customer Support Overflow",
-    "Appointment-Based Businesses",
-    "Bilingual Frontline Support",
+    "Missed calls during lunch rush, dispatch windows, or front-desk bottlenecks",
+    "Legal intake overflow when consultations spike or internal intake is at capacity",
+    "After-hours inquiries that still need a live response and clear next steps",
+    "Bilingual support gaps when Spanish-speaking callers need immediate help",
+    "Appointment booking and follow-up support to reduce no-shows and stalled leads",
   ];
 
   return (
@@ -300,11 +308,11 @@ export default function HomePage() {
               </Badge>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-[1.1] tracking-tight text-balance">
-                Bilingual Support Systems Built for Real Response Coverage
+                Bilingual Nearshore Support for Missed Calls, Intake, and Overflow
               </h1>
 
               <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 text-pretty leading-relaxed">
-                WDS helps growing businesses stay responsive with nearshore bilingual support for inbound calls, intake overflow, after-hours coverage, and customer follow-up.
+                WDS helps you stop losing opportunities to missed calls, inconsistent intake, and overloaded front desks with practical English-Spanish call coverage.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
@@ -412,10 +420,10 @@ export default function HomePage() {
           <AnimatedSection className="text-center mb-16">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/30">What We Do</Badge>
             <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-balance">
-              Practical Support Infrastructure for Inbound Response
+              Operational Support for Calls, Intake, and Customer Response
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              We provide bilingual systems that help your team answer faster, hand off cleaner, and follow through consistently.
+              We provide practical coverage that helps your team answer more calls, hand off cleaner intake, and respond consistently.
             </p>
           </AnimatedSection>
 
@@ -460,10 +468,10 @@ export default function HomePage() {
             <AnimatedSection>
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/30">Why WDS</Badge>
               <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-balance">
-                Direct, Disciplined Support Without Enterprise Friction
+                Practical, Disciplined Support Without Enterprise Complexity
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                We are built for businesses that need support now. Our model is straightforward: define the response gaps, deploy bilingual coverage, and deliver reliable intake and customer support execution.
+                WDS is built for operators who need reliable coverage now. We identify response gaps, deploy the right support quickly, and keep handoffs clean for your internal team.
               </p>
               <ul className="space-y-4">
                 {whyWds.map((item) => (
@@ -523,15 +531,15 @@ export default function HomePage() {
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/30">Use Cases</Badge>
             <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-balance">Where WDS Fits Best</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We replaced generic testimonial and blog filler with practical use-case coverage that reflects real operations.
+              Common situations where WDS adds coverage fast without changing your whole operation.
             </p>
           </AnimatedSection>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {useCases.map((useCase, index) => (
               <AnimatedSection key={useCase} delay={index * 70}>
-                <Card className="p-5 h-full text-center border-border bg-card/60 hover:border-primary/50 transition-all duration-300">
-                  <Users className="h-5 w-5 mx-auto mb-3 text-primary" />
-                  <p className="font-medium text-sm">{useCase}</p>
+                <Card className="p-5 h-full border-border bg-card/60 hover:border-primary/50 transition-all duration-300">
+                  <Users className="h-5 w-5 mb-3 text-primary" />
+                  <p className="font-medium text-sm leading-relaxed">{useCase}</p>
                 </Card>
               </AnimatedSection>
             ))}
@@ -549,7 +557,7 @@ export default function HomePage() {
             </Badge>
             <h2 className="text-3xl lg:text-6xl font-bold mb-6 text-balance">Let&apos;s Build Your Response Coverage</h2>
             <p className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Book a call and we&apos;ll show you where calls, intake opportunities, and customer responses are currently breaking down.
+              Book a call to review missed-call gaps, intake bottlenecks, and where your current response coverage needs reinforcement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -588,12 +596,12 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground mb-6 max-w-sm leading-relaxed">
-                Veteran-owned bilingual support systems for missed calls, intake overflow, customer response, and scalable nearshore operations.
+                Veteran-owned nearshore support for missed-call coverage, intake support, overflow calls, after-hours response, and bilingual customer communication.
               </p>
             </div>
 
             {[
-              { title: "Services", links: ["Missed Call Capture", "Intake Support", "Overflow Coverage", "After-Hours Response"] },
+              { title: "Services", links: ["Missed Call Coverage", "Intake Support", "Overflow Call Handling", "After-Hours Response"] },
               { title: "Company", links: ["About WDS", "Who We Help", "How It Works", "Contact"] },
             ].map((column) => (
               <div key={column.title}>
