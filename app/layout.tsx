@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Worldwide Digital Service | Bilingual Customer Support Solutions',
-  description: 'Premium bilingual customer support services for U.S. businesses. Expand your global reach with our professional multilingual support team available 24/7.',
+  title: 'Worldwide Digital Service | Bilingual Nearshore Support & Intake Systems',
+  description: 'Veteran-owned bilingual support systems for missed calls, intake overflow, customer response, and nearshore service operations.',
   generator: 'v0.app',
   icons: {
     icon: '/icon.svg',
