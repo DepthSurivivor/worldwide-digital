@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useForm, ValidationError } from "@formspree/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -71,6 +72,7 @@ function AnimatedSection({
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [state, handleSubmit] = useForm("xlgawbgl");
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -252,9 +254,14 @@ export default function HomePage() {
                   </a>
                 ),
               )}
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300">
-                Book a Call
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button
+                asChild
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300"
+              >
+                <a href="#book">
+                  Book a Call
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
               </Button>
             </nav>
 
@@ -283,8 +290,10 @@ export default function HomePage() {
                 </a>
               ),
             )}
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
-              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
+              <a href="#book" onClick={() => setIsMenuOpen(false)}>
+                Book a Call <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </nav>
         </div>
@@ -309,18 +318,22 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
                 <Button
+                  asChild
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 h-14 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
                 >
-                  Book a Call
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <a href="#book">
+                    Book a Call
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
                 <Button
+                  asChild
                   size="lg"
                   variant="outline"
                   className="text-lg px-8 h-14 border-border hover:bg-secondary hover:border-primary/30 transition-all duration-300"
                 >
-                  See Services
+                  <a href="#what-we-do">See Services</a>
                 </Button>
               </div>
 
@@ -539,34 +552,136 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-32 relative overflow-hidden">
+      <section id="book" className="py-20 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-primary/5" />
         <div className="container mx-auto px-4 lg:px-8 relative">
-          <AnimatedSection className="max-w-4xl mx-auto text-center">
+          <AnimatedSection className="max-w-4xl mx-auto">
             <Badge className="mb-6 bg-primary/10 text-primary border-primary/30">
               <Zap className="h-3.5 w-3.5 mr-2" />
               Final Step
             </Badge>
-            <h2 className="text-3xl lg:text-6xl font-bold mb-6 text-balance">Let&apos;s Build Your Response Coverage</h2>
-            <p className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Book a call and we&apos;ll review exactly where your response coverage is breaking down and what to fix first.
+            <h2 className="text-3xl lg:text-6xl font-bold mb-6 text-balance text-center">
+              Let&apos;s Build Your Response Coverage
+            </h2>
+            <p className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed text-center">
+              Share where missed calls, intake bottlenecks, overflow demand, after-hours response, or bilingual support gaps are showing up.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 h-14 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
-              >
-                Book a Call
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-10 h-14 border-border hover:bg-secondary hover:border-primary/30 transition-all duration-300"
-              >
-                Explore Services
-              </Button>
-            </div>
+
+            {state.succeeded ? (
+              <Card className="p-8 lg:p-10 border-border bg-card/70 backdrop-blur-sm text-center">
+                <h3 className="text-2xl font-bold mb-3">Request received.</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  We&apos;ll review your response coverage needs and follow up shortly.
+                </p>
+                <Button asChild variant="outline" className="mt-6">
+                  <a href="#what-we-do">Explore Services</a>
+                </Button>
+              </Card>
+            ) : (
+              <Card className="p-6 lg:p-8 border-border bg-card/70 backdrop-blur-sm">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label htmlFor="firstName" className="text-sm font-medium">
+                        First Name
+                      </label>
+                      <input
+                        id="firstName"
+                        name="firstName"
+                        required
+                        className="w-full h-11 rounded-lg border border-border bg-background/70 px-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                        placeholder="First name"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="lastName" className="text-sm font-medium">
+                        Last Name
+                      </label>
+                      <input
+                        id="lastName"
+                        name="lastName"
+                        required
+                        className="w-full h-11 rounded-lg border border-border bg-background/70 px-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                        placeholder="Last name"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium">
+                      Work Email
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      required
+                      className="w-full h-11 rounded-lg border border-border bg-background/70 px-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      placeholder="you@company.com"
+                    />
+                    <ValidationError
+                      prefix="Email"
+                      field="email"
+                      errors={state.errors}
+                      className="text-sm text-red-400"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="company" className="text-sm font-medium">
+                      Company
+                    </label>
+                    <input
+                      id="company"
+                      name="company"
+                      required
+                      className="w-full h-11 rounded-lg border border-border bg-background/70 px-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      placeholder="Your company"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-medium">
+                      What do you need coverage for?
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={5}
+                      className="w-full rounded-lg border border-border bg-background/70 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      placeholder="Tell us about missed calls, intake support, overflow windows, after-hours demand, or bilingual response needs."
+                    />
+                    <ValidationError
+                      prefix="Message"
+                      field="message"
+                      errors={state.errors}
+                      className="text-sm text-red-400"
+                    />
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={state.submitting}
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 h-14 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 hover:scale-105 disabled:hover:scale-100"
+                    >
+                      {state.submitting ? "Sending..." : "Book a Call"}
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                    <Button
+                      asChild
+                      size="lg"
+                      variant="outline"
+                      className="text-lg px-10 h-14 border-border hover:bg-secondary hover:border-primary/30 transition-all duration-300"
+                    >
+                      <a href="#what-we-do">Explore Services</a>
+                    </Button>
+                  </div>
+                </form>
+              </Card>
+            )}
           </AnimatedSection>
         </div>
       </section>
